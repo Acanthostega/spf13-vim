@@ -15,6 +15,7 @@ let g:load_doxygen_syntax=1
 
 " for the theme of the status line
 let g:airline_theme = "badwolf"
+let g:airline#extensions#tabline#enabled = 1
 
 " for adding space between comments and string
 let g:NERDSpaceDelims = 1
@@ -83,3 +84,6 @@ endfunction
 " remove automatically all trailing white spaces
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
+" inoremap <C-n> <C-R>=delimitMate#JumpAny()<CR>
+" let delimitMate_expand_cr = 1
+" let delimitMate_expand_space = 1
