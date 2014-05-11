@@ -2,10 +2,10 @@
 ############################  SETUP PARAMETERS
 app_name='spf13-vim'
 app_dir="$HOME/.spf13-vim-3"
-[ -z "$git_uri" ] && git_uri='https://github.com/spf13/spf13-vim.git'
+[ -z "$git_uri" ] && git_uri='https://github.com/Acanthostega/spf13-vim.git'
 git_branch='3.0'
 debug_mode='0'
-fork_maintainer='0'
+fork_maintainer='1'
 [ -z "$VUNDLE_URI" ] && VUNDLE_URI="https://github.com/gmarik/vundle.git"
 
 ############################  BASIC SETUP TOOLS
@@ -114,6 +114,7 @@ create_symlinks() {
     lnif "$endpath/.vimrc.bundles"      "$HOME/.vimrc.bundles"
     lnif "$endpath/.vimrc.before"       "$HOME/.vimrc.before"
     lnif "$endpath/.vim"                "$HOME/.vim"
+    lnif "$endpath/.vim/"                "$HOME/.vim"
 
     # Useful for fork maintainers
     touch  "$HOME/.vimrc.local"
@@ -134,6 +135,10 @@ create_symlinks() {
         ln -sf "$endpath/.vimrc.before.fork" "$HOME/.vimrc.before.fork"
     fi
 
+    lnif "$endpath/.vimrc.local.fortran" "$HOME/.vimrc.local.fortran"
+    lnif "$endpath/.vimrc.local.latex" "$HOME/.vimrc.local.latex"
+    lnif "$endpath/.vimrc.local.python" "$HOME/.vimrc.local.python"
+
     ret="$?"
     success "$1"
     debug
@@ -142,18 +147,21 @@ create_symlinks() {
 setup_vundle() {
     system_shell="$SHELL"
     export SHELL='/bin/sh'
-    
+
     vim \
         -u "$HOME/.vimrc.bundles" \
         "+set nomore" \
         +BundleInstall! \
         +BundleClean \
         +qall
-    
+
     export SHELL="$system_shell"
 
     success "$1"
     debug
+
+    lnif "$endpath/vim-snippets/snippets/fortran.snippets" "$HOME/.vim/bundle/vim-snippets/snippets/fortran.snippets"
+    lnif "$endpath/vim-snippets/UltiSnips/fortran.snippets" "$HOME/.vim/bundle/vim-snippets/UltiSnips/fortran.snippets"
 }
 
 ############################ MAIN()
