@@ -1,0 +1,280 @@
+snippet sel
+	SELECT CASE( ${1} )
+	
+	    CASE( ${2} )
+	
+	        ${3:source}
+	
+	    CASE DEFAULT
+	
+	        ${0:source}
+	
+	END SELECT
+snippet st
+	WRITE(6,*) 'STOP EFFECTUE'
+	STOP
+snippet prog
+	PROGRAM ${1:name}
+	
+	USE outil
+	
+	IMPLICIT NONE
+	
+	${0}
+	
+	END PROGRAM $1
+snippet aut
+	!> @author Manuel Duarte
+snippet dat
+	!> @date `strftime('%d/%m/%y %H:%M:%S')`
+snippet pin
+	!> @param[in] ${1}
+snippet po
+	!> @param[out] ${1}
+snippet bug
+	!> @bug ${1}
+snippet des
+	!> @par Description
+	!> ${1}
+snippet att
+	!> @attention ${1}
+snippet todo
+	!> @todo ${1}
+snippet ret
+	!> @return ${1}
+snippet warn
+	!> @warning ${1}
+snippet rem
+	!> @remarks ${1}
+snippet gca
+	CALL GET_COMMAND_ARGUMENT (${1}, ${2})
+	${0}
+snippet self
+	CLASS( ${1} ), INTENT(${2:INOUT}):: self
+	${0}
+snippet dow
+	DO WHILE(${1})
+	
+	${0:source}
+	
+	END DO
+snippet mod
+	MODULE ${1:name}
+	
+	USE outil
+	
+	IMPLICIT NONE
+	
+	CONTAINS
+	
+	! #########################################################################
+	! #########################################################################
+	
+	${0:SOURCE}
+	
+	END MODULE $1
+snippet class
+    MODULE ${1:name}_class
+
+    USE ${2}
+
+    IMPLICIT NONE
+
+    PRIVATE
+
+    PUBLIC:: $1
+
+    TYPE${3} $1
+
+        PRIVATE${4}
+
+        CONTAINS
+
+            PRIVATE${5}
+
+    END TYPE $1
+
+    INTERFACE $1
+
+        PROCEDURE constructor
+
+    END INTERFACE $1
+
+    CONTAINS
+
+    ! #########################################################################
+    ! #########################################################################
+	!> @author Manuel Duarte
+	!> @date `strftime('%d/%m/%y %H:%M:%S')`
+	!> @par Description
+	!> The constructor of the class.${6}
+	FUNCTION constructor ( ${7} )
+	
+	USE ${8}
+	
+	IMPLICIT NONE
+	
+	TYPE( $1 ):: constructor
+	
+	${9}
+	
+	END FUNCTION constructor
+
+    ! #########################################################################
+    ! #########################################################################
+
+    ${0}
+
+    END MODULE $1_class
+snippet cons
+	FUNCTION constructor ( ${1} )
+	
+	USE outil
+	
+	IMPLICIT NONE
+	
+	TYPE( ${2} ):: constructor
+	
+	${0}
+	
+	END FUNCTION constructor
+snippet int
+	INTERFACE ${1}
+	
+	    ${0}
+	
+	END INTERFACE $1
+snippet pro
+	PROCEDURE ${0}
+snippet gp
+	TYPE( gpf ):: gp
+snippet ci
+	CHARACTER(${1}), INTENT(${2}):: ${0}
+snippet cai
+	CHARACTER(:), ALLOCATABLE, INTENT(${1}):: ${0}
+snippet ca
+	CHARACTER(:), ALLOCATABLE:: ${0}
+snippet cd
+	CHARACTER(${1}), DIMENSION(${2}):: ${0}
+snippet cda
+	CHARACTER(${1}), DIMENSION(:), ALLOCATABLE:: ${0}
+snippet cdaa
+	CHARACTER(:), DIMENSION(:), ALLOCATABLE:: ${0}
+snippet cdaai
+	CHARACTER(:), DIMENSION(:), ALLOCATABLE, INTENT(${1}):: ${0}
+snippet cdai
+	CHARACTER(${1}), DIMENSION(:), ALLOCATABLE, INTENT(${2}):: ${0}
+snippet rda
+	REAL(kind=dp), DIMENSION(:), ALLOCATABLE:: ${0}
+snippet rdai
+	REAL(kind=dp), DIMENSION(:), ALLOCATABLE, INTENT(${1}):: ${0}
+snippet r
+	REAL(kind=dp):: ${0}
+snippet i
+	INTEGER(kind=ip):: ${0}
+snippet ida
+	INTEGER(kind=ip), DIMENSION(:), ALLOCATABLE:: ${0}
+snippet lda
+	LOGICAL, DIMENSION(:), ALLOCATABLE:: ${0}
+snippet op
+	OPEN( ${1}, file = "${2}", action = "${3}" )${0}
+snippet cl
+	CLOSE( ${1} )${0}
+snippet wr
+	WRITE( ${1}, ${2:*} ) ${0}
+snippet func
+	FUNCTION ${1} ( ${2} )
+	
+	USE ${3}
+	
+	IMPLICIT NONE
+	
+	${0}
+	
+	END FUNCTION $1
+snippet ri
+	REAL(kind=dp), INTENT(${1}):: ${0}
+snippet al
+	ALLOCATE( ${1} )${0}
+snippet c
+	CHARACTER(${1}):: ${0}
+snippet l
+	LOGICAL:: ${0}
+snippet rd
+	REAL(kind=dp), DIMENSION(${1}):: ${0}
+snippet t
+	TYPE( ${1} ):: ${0}
+snippet re
+	READ( ${1}, ${2} ) ${0}
+snippet ti
+	TYPE( ${1} ), INTENT(${2}):: ${0}
+snippet tdai
+	TYPE( ${1} ), DIMENSION(:), ALLOCATABLE, INTENT(${2}):: ${0} 
+snippet sub
+	SUBROUTINE ${1} ( ${2} )
+	
+	USE ${3}
+	
+	IMPLICIT NONE
+	
+	${0}
+	
+	END SUBROUTINE $1
+snippet tdi
+	TYPE( ${1} ), DIMENSION(${2}), INTENT(${3}):: ${0}
+snippet ii
+	INTEGER(kind=ip), INTENT(${1}):: ${0}
+snippet tda
+	TYPE( ${1} ), DIMENSION(:), ALLOCATABLE:: ${0}
+snippet rdi
+	REAL(kind=dp), DIMENSION(${1::}), INTENT(${2}):: ${0}
+snippet bloc
+	! #########################################################################
+	! #########################################################################
+snippet cdi
+	CHARACTER(${1}), DIMENSION(${2::}), INTENT(${3}):: ${0}
+snippet %
+	self%
+snippet cldi
+	CLASS( ${1} ), DIMENSION(${2}), INTENT(${3}):: ${0}
+snippet idi
+	INTEGER(kind=ip), DIMENSION(${1}), INTENT(${2}):: ${0}
+snippet li
+	LOGICAL, INTENT(${1}):: ${0}
+snippet o
+	, OPTIONAL
+snippet gep
+	GENERIC, PUBLIC:: ${0}
+snippet dal
+	DEALLOCATE( ${1} )${0}
+snippet idai
+	INTEGER(kind=ip), DIMENSION(:), ALLOCATABLE, INTENT(${1}):: ${0}
+snippet ok
+	WRITE( *, * ) "ok"
+snippet ldi
+	LOGICAL, DIMENSION(:), ALLOCATABLE:: ${0}
+snippet add
+	!> - @date $(date +%d/%m/%y\ %H:%M:%S) : ${0}
+snippet pp
+	PROCEDURE, PUBLIC:: ${0}
+snippet set
+	CALL constructor%set_${1}( $1 )${0}
+snippet s
+	SUBROUTINE set_${1} ( self, $1 )
+	
+	${2}
+	
+	IMPLICIT NONE
+	
+	CLASS( ${3} ), INTENT(INOUT):: self
+	
+	${0}
+	
+	END SUBROUTINE set_$1
+snippet rp
+	REAL(kind=dp), PARAMETER:: ${0}
+snippet txt
+	CALL txtcolor( &
+	    "${1}", &
+	    color = ${2} &
+	)${0}

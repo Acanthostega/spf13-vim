@@ -1,0 +1,85 @@
+"hi clear
+"syntax reset
+"color desert
+let g:indent_guides_enable_on_vim_startup = 0
+set nolist
+
+"no mouse
+set mouse=
+
+" Now set the maximal text width
+setlocal textwidth=76
+
+" allow the coloration of doxygen tags
+let g:load_doxygen_syntax=1
+
+" for the theme of the status line
+let g:airline_theme = "badwolf"
+
+" for adding space between comments and string
+let g:NERDSpaceDelims = 1
+let g:NERDRemoveExtraSpaces = 1
+
+" clear highlight search easily
+nnoremap <leader><space> :noh<CR>
+
+" use tab for moving around brackets
+nnoremap <tab> %
+vnoremap <tab> %
+
+" color the column limit
+set colorcolumn=79
+
+" map the help key to escape since its the hell...
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+" same for the semi colon with command
+nnoremap ; :
+
+" escape with jj
+inoremap jj <ESC>
+
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+" source configuration for python
+source ~/.vimrc.local.python
+
+" source configuration for fortran
+source ~/.vimrc.local.fortran
+
+" source configuration for latex
+source ~/.vimrc.local.latex
+
+" go to definition and declaration for youcompleteme
+nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" for paste
+set pastetoggle=<F2>
+
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
+
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
+
+" for removing trailing white space without search removed
+function! <SID>StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+
+" remove automatically all trailing white spaces
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
