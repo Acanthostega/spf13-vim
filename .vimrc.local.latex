@@ -1,5 +1,5 @@
 " compile the pdf
-nnoremap <F3> :!latex-mk --pdflatex %<CR>
+nnoremap <F3> :Shell! latex-mk --pdflatex %<CR>
 
 " for latex environment around existing text with surround
 let g:surround_108 = "\\begin{\1environment: \1}\r\\end{\1\1}"
