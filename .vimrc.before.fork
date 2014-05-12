@@ -8,3 +8,6 @@ let g:spf13_bundle_groups=[
     \'python',
     \'youcompleteme'
 \]
+
+" for no conceal in insert mode for latex
+let g:spf13_no_conceal = 1
