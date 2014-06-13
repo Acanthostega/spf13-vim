@@ -1,4 +1,5 @@
 " now don't use the completion of rope but youcompleteme, faster and better
+let g:pymode_rope=1
 let g:pymode_rope_completion = 0
 
 "better for handling docstrings
