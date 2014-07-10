@@ -1,7 +1,7 @@
 Bundle 'myusuf3/numbers.vim'
 Bundle 'ajford/vimkivy'
 Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'Shougo/unite.vim'
+" Bundle 'Shougo/unite.vim'
 Bundle 'chrisbra/Recover.vim'
 " Bundle 'pydave/AsyncCommand'
 Bundle 'troydm/shellasync.vim'

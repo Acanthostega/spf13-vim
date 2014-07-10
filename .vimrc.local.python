@@ -3,7 +3,7 @@ let g:pymode_rope=1
 let g:pymode_rope_completion = 0
 
 "better for handling docstrings
-let g:pymoed_syntax_slow_sync = 1
+let g:pymode_syntax_slow_sync = 1
 
 " to not allow rope to search for .ropeproject directory
 " in parent folders
