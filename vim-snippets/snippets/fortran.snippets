@@ -1,27 +1,27 @@
 snippet sel
 	SELECT CASE( ${1} )
-	
-	    CASE( ${2} )
-	
-	        ${3:source}
-	
-	    CASE DEFAULT
-	
-	        ${0:source}
-	
+
+		CASE( ${2} )
+
+			${3:source}
+
+		CASE DEFAULT
+
+			${0:source}
+
 	END SELECT
 snippet st
 	WRITE(6,*) 'STOP EFFECTUE'
 	STOP
 snippet prog
 	PROGRAM ${1:name}
-	
+
 	USE outil
-	
+
 	IMPLICIT NONE
-	
+
 	${0}
-	
+
 	END PROGRAM $1
 snippet aut
 	!> @author Manuel Duarte
@@ -54,95 +54,94 @@ snippet self
 	${0}
 snippet dow
 	DO WHILE(${1})
-	
+
 	${0:source}
-	
+
 	END DO
 snippet mod
 	MODULE ${1:name}
-	
+
 	USE outil
-	
+
 	IMPLICIT NONE
-	
+
 	CONTAINS
-	
+
 	! #########################################################################
 	! #########################################################################
-	
+
 	${0:SOURCE}
-	
+
 	END MODULE $1
+
 snippet class
-    MODULE ${1:name}_class
+	MODULE ${1:name}_class
 
-    USE ${2}
+	USE ${2}
 
-    IMPLICIT NONE
+	IMPLICIT NONE
 
-    PRIVATE
+	PRIVATE
 
-    PUBLIC:: $1
+	PUBLIC:: $1
 
-    TYPE${3} $1
+	TYPE${3} $1
 
-        PRIVATE${4}
+		PRIVATE${4}
 
-        CONTAINS
+		CONTAINS
 
-            PRIVATE${5}
+			PRIVATE${5}
 
-    END TYPE $1
+	END TYPE $1
 
-    INTERFACE $1
+	INTERFACE $1
+		PROCEDURE constructor
+	END INTERFACE $1
 
-        PROCEDURE constructor
+	CONTAINS
 
-    END INTERFACE $1
-
-    CONTAINS
-
-    ! #########################################################################
-    ! #########################################################################
+	! #########################################################################
+	! #########################################################################
 	!> @author Manuel Duarte
 	!> @date `strftime('%d/%m/%y %H:%M:%S')`
 	!> @par Description
 	!> The constructor of the class.${6}
-	FUNCTION constructor ( ${7} )
-	
+	FUNCTION constructor (${7})
+
 	USE ${8}
-	
+
 	IMPLICIT NONE
-	
-	TYPE( $1 ):: constructor
-	
+
+	TYPE($1):: constructor
+
 	${9}
-	
+
 	END FUNCTION constructor
 
-    ! #########################################################################
-    ! #########################################################################
+	! #########################################################################
+	! #########################################################################
 
-    ${0}
+	${0}
 
-    END MODULE $1_class
+	END MODULE $1_class
 snippet cons
 	FUNCTION constructor ( ${1} )
-	
+
 	USE outil
-	
+
 	IMPLICIT NONE
-	
+
 	TYPE( ${2} ):: constructor
-	
+
 	${0}
-	
+
 	END FUNCTION constructor
 snippet int
 	INTERFACE ${1}
-	
-	    ${0}
-	
+
+		${0}
+
 	END INTERFACE $1
 snippet pro
 	PROCEDURE ${0}
@@ -184,13 +183,13 @@ snippet wr
 	WRITE( ${1}, ${2:*} ) ${0}
 snippet func
 	FUNCTION ${1} ( ${2} )
-	
+
 	USE ${3}
-	
+
 	IMPLICIT NONE
-	
+
 	${0}
-	
+
 	END FUNCTION $1
 snippet ri
 	REAL(kind=dp), INTENT(${1}):: ${0}
@@ -209,16 +208,16 @@ snippet re
 snippet ti
 	TYPE( ${1} ), INTENT(${2}):: ${0}
 snippet tdai
-	TYPE( ${1} ), DIMENSION(:), ALLOCATABLE, INTENT(${2}):: ${0} 
+	TYPE( ${1} ), DIMENSION(:), ALLOCATABLE, INTENT(${2}):: ${0}
 snippet sub
 	SUBROUTINE ${1} ( ${2} )
-	
+
 	USE ${3}
-	
+
 	IMPLICIT NONE
-	
+
 	${0}
-	
+
 	END SUBROUTINE $1
 snippet tdi
 	TYPE( ${1} ), DIMENSION(${2}), INTENT(${3}):: ${0}
@@ -261,20 +260,20 @@ snippet set
 	CALL constructor%set_${1}( $1 )${0}
 snippet s
 	SUBROUTINE set_${1} ( self, $1 )
-	
+
 	${2}
-	
+
 	IMPLICIT NONE
-	
+
 	CLASS( ${3} ), INTENT(INOUT):: self
-	
+
 	${0}
-	
+
 	END SUBROUTINE set_$1
 snippet rp
 	REAL(kind=dp), PARAMETER:: ${0}
 snippet txt
 	CALL txtcolor( &
-	    "${1}", &
-	    color = ${2} &
+		"${1}", &
+		color = ${2} &
 	)${0}
