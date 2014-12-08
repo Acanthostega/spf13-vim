@@ -12,6 +12,9 @@ let g:pymode_rope_lookup_project = 0
 " allow check code for python if unmodified too
 let g:pymode_lint_unmodified = 1
 
+" set checkers
+let g:pymode_lint_checkers = ["pyflakes", "pep8", "mccabe"]
+
 "put the template for python with shebang etc automatically when creating a
 "new python file
 if has("autocmd")
