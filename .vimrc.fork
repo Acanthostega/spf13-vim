@@ -49,15 +49,6 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
-" source configuration for python
-source ~/.vimrc.local.python
-
-" source configuration for fortran
-source ~/.vimrc.local.fortran
-
-" source configuration for latex
-source ~/.vimrc.local.latex
-
 " go to definition and declaration for youcompleteme
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 

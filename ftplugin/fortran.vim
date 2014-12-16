@@ -1,5 +1,8 @@
+" deactivate the syntax checker of you completeme
+let g:ycm_register_as_syntastic_checker = 0
+
 "to check the syntax in fortran
-let g:syntastic_fortran_compiler = '/home/manuel/PROGRAMS/gfortran/bin/gfortran'
+" let g:syntastic_fortran_compiler = '/usr/bin/gfortran'
 let g:syntastic_fortran_compiler_options = ""
 let g:syntastic_fortran_compiler_options .= "-I/home/manuel/Documents/libperso/SQLITE3 "
 let g:syntastic_fortran_compiler_options .= "-I/home/manuel/.local/include "

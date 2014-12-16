@@ -156,10 +156,6 @@ create_symlinks() {
         ln -sf "$endpath/.vimrc.before.fork" "$HOME/.vimrc.before.fork"
     fi
 
-    lnif "$endpath/.vimrc.local.fortran" "$HOME/.vimrc.local.fortran"
-    lnif "$endpath/.vimrc.local.latex" "$HOME/.vimrc.local.latex"
-    lnif "$endpath/.vimrc.local.python" "$HOME/.vimrc.local.python"
-
     ret="$?"
     success "$1"
     debug
@@ -183,6 +179,7 @@ setup_vundle() {
 
     lnif "$endpath/vim-snippets/snippets/fortran.snippets" "$HOME/.vim/bundle/vim-snippets/snippets/fortran.snippets"
     lnif "$endpath/vim-snippets/UltiSnips/fortran.snippets" "$HOME/.vim/bundle/vim-snippets/UltiSnips/fortran.snippets"
+    lnif "$endpath/ftplugin/" "$HOME/.vim/ftplugin"
 }
 
 ############################ MAIN()
