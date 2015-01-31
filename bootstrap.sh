@@ -177,7 +177,7 @@ setup_vundle() {
     success "$1"
     debug
 
-    lnif "$endpath/vim-snippets/snippets/fortran.snippets" "$HOME/.vim/bundle/vim-snippets/snippets/fortran.snippets"
+    # lnif "$endpath/vim-snippets/snippets/fortran.snippets" "$HOME/.vim/bundle/vim-snippets/snippets/fortran.snippets"
     lnif "$endpath/vim-snippets/UltiSnips/fortran.snippets" "$HOME/.vim/bundle/vim-snippets/UltiSnips/fortran.snippets"
     lnif "$endpath/ftplugin/" "$HOME/.vim/ftplugin"
 }

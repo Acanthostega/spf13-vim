@@ -2,11 +2,9 @@ snippet sel
 SELECT CASE(${1})
 
 	CASE(${2})
-
 		${3:source}
 
 	CASE DEFAULT
-
 		${0:source}
 
 END SELECT
@@ -19,8 +17,6 @@ endsnippet
 
 snippet prog
 PROGRAM ${1:name}
-
-USE outil
 
 IMPLICIT NONE
 
@@ -93,8 +89,6 @@ endsnippet
 snippet mod
 MODULE ${1:name}
 
-USE outil
-
 IMPLICIT NONE
 
 CONTAINS
@@ -129,9 +123,7 @@ TYPE${3} $1
 END TYPE $1
 
 INTERFACE $1
-
 	PROCEDURE constructor
-
 END INTERFACE $1
 
 CONTAINS
@@ -142,13 +134,13 @@ CONTAINS
 !> @date `strftime('%d/%m/%y %H:%M:%S')`
 !> @par Description
 !> The constructor of the class.${6}
-FUNCTION constructor ( ${7} )
+FUNCTION constructor (${7})
 
-USE ${8}
+${8:USE }
 
 IMPLICIT NONE
 
-TYPE( $1 ):: constructor
+TYPE($1):: constructor
 
 ${9}
 
@@ -164,8 +156,6 @@ endsnippet
 
 snippet cons
 FUNCTION constructor (${1})
-
-USE outil
 
 IMPLICIT NONE
 
