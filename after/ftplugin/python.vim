@@ -14,17 +14,3 @@ let g:pymode_lint_unmodified = 1
 
 " set checkers
 let g:pymode_lint_checkers = ["pyflakes", "pep8", "mccabe"]
-
-"put the template for python with shebang etc automatically when creating a
-"new python file
-if has("autocmd")
-augroup content
-autocmd BufNewFile *.py
-\ 0put = '#!/usr/bin/env python3' |
-\ 1put = '# -*- coding: utf-8 -*-' |
-\ $put = '' |
-\ $put = '' |
-\ $put = '# vim: set tw=79 :' |
-\ norm gg19jf]
-augroup END
-endif

@@ -179,7 +179,9 @@ setup_vundle() {
 
     # lnif "$endpath/vim-snippets/snippets/fortran.snippets" "$HOME/.vim/bundle/vim-snippets/snippets/fortran.snippets"
     lnif "$endpath/vim-snippets/UltiSnips/fortran.snippets" "$HOME/.vim/bundle/vim-snippets/UltiSnips/fortran.snippets"
-    lnif "$endpath/ftplugin/" "$HOME/.vim/ftplugin"
+    lnif "$endpath/ftplugin/" "$HOME/.vim/"
+    mkdir -p "$HOME/.vim/after"
+    lnif "$endpath/after/ftplugin" "$HOME/.vim/after/"
 }
 
 ############################ MAIN()

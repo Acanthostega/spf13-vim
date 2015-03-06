@@ -80,3 +80,20 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 " inoremap <C-n> <C-R>=delimitMate#JumpAny()<CR>
 " let delimitMate_expand_cr = 1
 " let delimitMate_expand_space = 1
+
+" do some specific stuff for some filetype
+autocmd BufRead,BufNewFile *.py source ~/.vim/after/ftplugin/python.vim
+
+"put the template for python with shebang etc automatically when creating a
+"new python file
+if has("autocmd")
+augroup content
+autocmd BufNewFile *.py
+\ 0put = '#!/usr/bin/env python3' |
+\ 1put = '# -*- coding: utf-8 -*-' |
+\ $put = '' |
+\ $put = '' |
+\ $put = '# vim: set tw=79 :' |
+\ norm gg19jf]
+augroup END
+endif
