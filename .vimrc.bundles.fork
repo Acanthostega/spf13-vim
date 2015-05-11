@@ -10,3 +10,5 @@ Bundle 'troydm/shellasync.vim'
 Bundle 'vim-scripts/nginx.vim'
 Bundle "beyondmarc/glsl.vim"
 " Bundle 'vim-scripts/django.vim'
+UnBundle 'jiangmiao/auto-pairs'
+Bundle 'spf13/vim-autoclose'
