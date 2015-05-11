@@ -511,7 +511,7 @@ Here's some tips if you've never used VIM before:
 [Git]:http://git-scm.com
 [Curl]:http://curl.haxx.se
 [Vim]:http://www.vim.org/download.php#pc
-[msysgit]:http://code.google.com/p/msysgit
+[msysgit]:http://msysgit.github.io
 [Chocolatey]: http://chocolatey.org/
 [spf13-vim package]: https://chocolatey.org/packages/spf13-vim
 [MacVim]:http://code.google.com/p/macvim/
