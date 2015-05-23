@@ -2,6 +2,9 @@
 let g:pymode_rope=1
 let g:pymode_rope_completion = 0
 
+" the version of python to use
+let g:pymode_python="python3"
+
 "better for handling docstrings
 let g:pymode_syntax_slow_sync = 1
 
@@ -11,9 +14,6 @@ let g:pymode_rope_lookup_project = 0
 
 " allow check code for python if unmodified too
 let g:pymode_lint_unmodified = 1
-
-" set checkers
-let g:pymode_lint_checkers = ["pyflakes", "pep8", "mccabe"]
 
 "put the template for python with shebang etc automatically when creating a
 "new python file
