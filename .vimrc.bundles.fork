@@ -12,3 +12,5 @@ Bundle "beyondmarc/glsl.vim"
 UnBundle "jiangmiao/auto-pairs"
 Bundle "spf13/vim-autoclose"
 " Bundle 'vim-scripts/django.vim'
+UnBundle 'jiangmiao/auto-pairs'
+Bundle 'spf13/vim-autoclose'
