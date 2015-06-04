@@ -121,6 +121,11 @@ create_symlinks() {
     lnif "$endpath/.vim"                "$HOME/.vim"
     lnif "$endpath/.vim/"                "$HOME/.vim"
     touch  "$target_path/.vimrc.local"
+    lnif "$endpath/.vimrc"              "$HOME/.vimrc"
+    lnif "$endpath/.vimrc.bundles"      "$HOME/.vimrc.bundles"
+    lnif "$endpath/.vimrc.before"       "$HOME/.vimrc.before"
+    lnif "$endpath/.vim"                "$HOME/.vim"
+    lnif "$endpath/.vim/"                "$HOME/.vim"
 
     ret="$?"
     success "Setting up vim symlinks."
@@ -144,6 +149,9 @@ setup_fork_mode() {
         success "Created fork maintainer files."
         debug
     fi
+    lnif "$endpath/.vimrc.local.fortran" "$HOME/.vimrc.local.fortran"
+    lnif "$endpath/.vimrc.local.latex" "$HOME/.vimrc.local.latex"
+    lnif "$endpath/.vimrc.local.python" "$HOME/.vimrc.local.python"
 }
 
 setup_vundle() {

@@ -97,3 +97,6 @@ autocmd BufNewFile *.py
 \ norm gg19jf]
 augroup END
 endif
+
+" set checkers
+let g:pymode_lint_checkers = ["pylint", "pep8", "mccabe"]
