@@ -132,11 +132,6 @@ create_symlinks() {
     fi
 
     touch  "$target_path/.vimrc.local"
-    lnif "$endpath/.vimrc"              "$HOME/.vimrc"
-    lnif "$endpath/.vimrc.bundles"      "$HOME/.vimrc.bundles"
-    lnif "$endpath/.vimrc.before"       "$HOME/.vimrc.before"
-    lnif "$endpath/.vim"                "$HOME/.vim"
-    lnif "$endpath/.vim/"                "$HOME/.vim"
 
     ret="$?"
     success "Setting up vim symlinks."
@@ -160,9 +155,9 @@ setup_fork_mode() {
         success "Created fork maintainer files."
         debug
     fi
-    lnif "$endpath/.vimrc.local.fortran" "$HOME/.vimrc.local.fortran"
-    lnif "$endpath/.vimrc.local.latex" "$HOME/.vimrc.local.latex"
-    lnif "$endpath/.vimrc.local.python" "$HOME/.vimrc.local.python"
+    lnif "$source_path/.vimrc.local.fortran" "$target_path/.vimrc.local.fortran"
+    lnif "$source_path/.vimrc.local.latex" "$target_path/.vimrc.local.latex"
+    lnif "$source_path/.vimrc.local.python" "$target_path/.vimrc.local.python"
 }
 
 setup_vundle() {
@@ -181,11 +176,10 @@ setup_vundle() {
     success "Now updating/installing plugins using Vundle"
     debug
 
-    # lnif "$endpath/vim-snippets/snippets/fortran.snippets" "$HOME/.vim/bundle/vim-snippets/snippets/fortran.snippets"
-    lnif "$endpath/vim-snippets/UltiSnips/fortran.snippets" "$HOME/.vim/bundle/vim-snippets/UltiSnips/fortran.snippets"
-    lnif "$endpath/ftplugin/" "$HOME/.vim/"
-    mkdir -p "$HOME/.vim/after"
-    lnif "$endpath/after/ftplugin" "$HOME/.vim/after/"
+    lnif "$source_path/vim-snippets/UltiSnips/fortran.snippets" "$target_path/.vim/bundle/vim-snippets/UltiSnips/fortran.snippets"
+    lnif "$source_path/ftplugin/" "$target_path/.vim/"
+    mkdir -p "$target_path/.vim/after"
+    lnif "$source_path/after/ftplugin" "$target_path/.vim/after/"
 }
 
 ############################ MAIN()
