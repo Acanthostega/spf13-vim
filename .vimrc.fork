@@ -100,3 +100,6 @@ endif
 
 " set checkers
 let g:pymode_lint_checkers = ["pylint", "pep8", "mccabe"]
+let g:pymode_python = 'python3'
+let g:pymode_virtualenv = 1
+
