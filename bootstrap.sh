@@ -175,11 +175,19 @@ setup_vundle() {
 
     success "Now updating/installing plugins using Vundle"
     debug
+}
 
-    lnif "$source_path/vim-snippets/UltiSnips/fortran.snippets" "$target_path/.vim/bundle/vim-snippets/UltiSnips/fortran.snippets"
-    lnif "$source_path/vim-snippets/UltiSnips/tex.snippets" "$target_path/.vim/bundle/vim-snippets/UltiSnips/tex.snippets"
-    lnif "$source_path/vim-snippets/UltiSnips/python.snippets" "$target_path/.vim/bundle/vim-snippets/UltiSnips/python.snippets"
-    lnif "$source_path/ftplugin/" "$target_path/.vim/"
+post_setup() {
+    local source_path="$1"
+    local target_path="$2"
+
+    lnif "$source_path/vim-snippets/UltiSnips/fortran.snippets" \
+        "$target_path/.vim/bundle/vim-snippets/UltiSnips/fortran.snippets"
+    lnif "$source_path/vim-snippets/UltiSnips/tex.snippets" \
+        "$target_path/.vim/bundle/vim-snippets/UltiSnips/tex.snippets"
+    lnif "$source_path/vim-snippets/UltiSnips/python.snippets" \
+        "$target_path/.vim/bundle/vim-snippets/UltiSnips/python.snippets"
+    lnif "$source_path/ftplugin" "$target_path/.vim/"
     mkdir -p "$target_path/.vim/after"
     lnif "$source_path/after/ftplugin" "$target_path/.vim/after/"
 }
@@ -211,6 +219,9 @@ sync_repo       "$HOME/.vim/bundle/vundle" \
                 "vundle"
 
 setup_vundle    "$APP_PATH/.vimrc.bundles.default"
+
+post_setup      "$APP_PATH" \
+                "$HOME"
 
 msg             "\nThanks for installing $app_name."
 msg             "© `date +%Y` http://vim.spf13.com/"
