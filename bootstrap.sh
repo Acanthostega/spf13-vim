@@ -177,6 +177,8 @@ setup_vundle() {
     debug
 
     lnif "$source_path/vim-snippets/UltiSnips/fortran.snippets" "$target_path/.vim/bundle/vim-snippets/UltiSnips/fortran.snippets"
+    lnif "$source_path/vim-snippets/UltiSnips/tex.snippets" "$target_path/.vim/bundle/vim-snippets/UltiSnips/tex.snippets"
+    lnif "$source_path/vim-snippets/UltiSnips/python.snippets" "$target_path/.vim/bundle/vim-snippets/UltiSnips/python.snippets"
     lnif "$source_path/ftplugin/" "$target_path/.vim/"
     mkdir -p "$target_path/.vim/after"
     lnif "$source_path/after/ftplugin" "$target_path/.vim/after/"
