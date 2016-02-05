@@ -44,10 +44,10 @@ nnoremap ; :
 " escape with jj
 inoremap jj <ESC>
 
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+" au VimEnter * RainbowParenthesesToggle
+" au Syntax * RainbowParenthesesLoadRound
+" au Syntax * RainbowParenthesesLoadSquare
+" au Syntax * RainbowParenthesesLoadBraces
 
 " go to definition and declaration for youcompleteme
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
