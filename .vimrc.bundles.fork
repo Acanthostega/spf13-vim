@@ -4,10 +4,12 @@ Bundle 'kien/rainbow_parentheses.vim'
 " Bundle 'Shougo/unite.vim'
 Bundle 'chrisbra/Recover.vim'
 " Bundle 'pydave/AsyncCommand'
-Bundle 'troydm/shellasync.vim'
+" Bundle 'troydm/shellasync.vim'
 " Bundle 'Raimondi/delimitMate'
 Bundle 'vim-scripts/nginx.vim'
 Bundle "beyondmarc/glsl.vim"
 UnBundle "jiangmiao/auto-pairs"
 Bundle "spf13/vim-autoclose"
+" UnBundle "Valloric/YouCompleteMe"
 " Bundle 'vim-scripts/django.vim'
+Bundle "Glench/Vim-Jinja2-Syntax"
