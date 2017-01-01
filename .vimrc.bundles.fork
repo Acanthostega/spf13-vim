@@ -1,16 +1,12 @@
 Bundle 'myusuf3/numbers.vim'
 Bundle 'ajford/vimkivy'
-" Bundle 'kien/rainbow_parentheses.vim'
-" Bundle 'Shougo/unite.vim'
 Bundle 'chrisbra/Recover.vim'
-" Bundle 'pydave/AsyncCommand'
-" Bundle 'troydm/shellasync.vim'
-" Bundle 'Raimondi/delimitMate'
 Bundle 'vim-scripts/nginx.vim'
 Bundle "beyondmarc/glsl.vim"
 UnBundle "jiangmiao/auto-pairs"
 Bundle "spf13/vim-autoclose"
-" UnBundle "Valloric/YouCompleteMe"
-" Bundle 'vim-scripts/django.vim'
 Bundle "Glench/Vim-Jinja2-Syntax"
-Bundle "vim-airline/vim-airline-themes"
+UnBundle "amirh/HTML-AutoCloseTag"
+Bundle "mxw/vim-jsx"
+Bundle "mtscout6/syntastic-local-eslint.vim"
+Bundle "pangloss/vim-javascript"

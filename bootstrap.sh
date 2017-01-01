@@ -155,9 +155,6 @@ setup_fork_mode() {
         success "Created fork maintainer files."
         debug
     fi
-    lnif "$source_path/.vimrc.local.fortran" "$target_path/.vimrc.local.fortran"
-    lnif "$source_path/.vimrc.local.latex" "$target_path/.vimrc.local.latex"
-    lnif "$source_path/.vimrc.local.python" "$target_path/.vimrc.local.python"
 }
 
 setup_vundle() {
